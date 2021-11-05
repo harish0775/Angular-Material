@@ -5,14 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { OnclickComponent } from './onclick/onclick.component';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
+import { DecoratorComponent } from './decorator/decorator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OnclickComponent
+    DecoratorComponent,
   ],
   imports: [
     BrowserModule,

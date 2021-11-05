@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OnclickComponent } from './onclick.component';
+import { DecoratorComponent } from './decorator.component';
 
-describe('OnclickComponent', () => {
-  let component: OnclickComponent;
-  let fixture: ComponentFixture<OnclickComponent>;
+describe('DecoratorComponent', () => {
+  let component: DecoratorComponent;
+  let fixture: ComponentFixture<DecoratorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OnclickComponent ]
+      declarations: [ DecoratorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OnclickComponent);
+    fixture = TestBed.createComponent(DecoratorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
