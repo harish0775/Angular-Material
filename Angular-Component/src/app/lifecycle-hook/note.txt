@@ -1,0 +1,10 @@
+Lifecycle Hooks
+
+. OnChange
+. OnInit
+. DoCheck
+. AfterContentInit
+. AfterContnentChecked
+. AfterViewInit
+. AfterViewChecked
+. OnDestroy

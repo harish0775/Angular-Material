@@ -8,11 +8,13 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { DecoratorComponent } from './decorator/decorator.component';
+import { LifecycleHookComponent } from './lifecycle-hook/lifecycle-hook.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DecoratorComponent,
+    LifecycleHookComponent,
   ],
   imports: [
     BrowserModule,
