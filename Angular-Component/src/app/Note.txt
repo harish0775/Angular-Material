@@ -1,0 +1,20 @@
+
+1. Passing  Data From parent to Children 
+
+Use  Decorator
+
+@input
+
+parent :->
+.html
+[data] = "aptsfile"
+.ts
+aptsfile = "data"
+
+child :->
+ .ts
+  @input() data : any;
+  .html
+  {{data}}
+
+

@@ -6,14 +6,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { DecoratorComponent } from './decorator/decorator.component';
-import { LifecycleHookComponent } from './lifecycle-hook/lifecycle-hook.component';
-
+import { ChildComponent } from './child/child.component';
 @NgModule({
   declarations: [
     AppComponent,
-    DecoratorComponent,
-    LifecycleHookComponent,
+    ChildComponent,
   ],
   imports: [
     BrowserModule,
