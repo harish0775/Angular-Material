@@ -1,1 +1,17 @@
-<p>lifecycle-hook works!</p>
+<h1 [innerText]="title"></h1>
+<h2>Example 1</h2>
+<button [disabled]="isDisabled">I am disabled</button>
+<p> onChange</p>
+<p> Message : <input type='text' [(ngModel)]='message'> </p>
+<p> Code : <input type ='text' [(ngModel)] = 'code'></p>
+<p> User : <input type = 'text' [(ngModel)] = 'User'></p>
+ 
+<div> 
+    <button mat-button (onclick) = "inc()">+</button>
+    <p >
+        <input  matInput type = "number" ngModel[(mynewNumber)] = "counter">
+    </p>
+    
+    
+    <button mat-button (onclick) = "dec()">-</button>
+</div>
