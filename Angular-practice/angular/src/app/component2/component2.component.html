@@ -1,0 +1,14 @@
+<p>component2 works!</p>
+<ul>
+ <span *ngFor="let item of items;">
+   <li>
+     {{item.name}}
+   </li>
+ </span>
+ <br>
+ <span *ngFor = "let item of items">
+     <li *ngIf="item.active">
+         {{item.name}}
+     </li>
+ </span>
+</ul>
