@@ -11,28 +11,56 @@ const winCombos = [
 	[0, 4, 8],
 	[6, 4, 2]
 ]
-
 const cells = document.querySelectorAll('.cell');
 startGame();
-
 function startGame() {
 	document.querySelector(".endgame").style.display = "none";
-	origBoard = Array.from(Array(12).keys()); 
-    console.log("OrigBoard",origBoard)
+	origBoard = Array.from(Array(9).keys());
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].innerText = '';
 		cells[i].style.removeProperty('background-color');
-		cells[i].addEventListener('click', turnClick, false);
+		cells[i].addEventListener('click', turnClick);
 	}
 }
-
 function turnClick(square) {
 	turn(square.target.id, huPlayer)
 }
-
 function turn(squareId, player) {
 	origBoard[squareId] = player;
 	document.getElementById(squareId).innerText = player;
+	let gameWon = checkWin(origBoard, player);
+	if (gameWon){
+           gameOver(gameWon);
+    }
 }
+function checkWin(board, player) {
+	// let plays = board.reduce((a, e, i) => 
+	// 	(e === player) ? a.concat(i) : a, []);
+    let plays = board.reduce((a,e,i)=>  //play store Array of Index Postion like [1,4,7]
+    (e === player)?a.concat(i) :a,[]);//[] initlize the Accmulator to the Empty Array
+    
+	let gameWon = null;
+    
+    console.log("Plays",plays);
 
-
+	for (let [index, win] of winCombos.entries()) { // go every element of index&win of wincombos.entries
+      console.log("win" ,win,"Index",index)  // win check Every time is I am Win for the Given index
+		if (win.every(elem => plays.indexOf(elem) > -1)) {
+            console.log("win",win);
+            console.log("gameWon",gameWon);
+			gameWon = {index: index, player: player};
+			break;
+		}
+	}
+    console.log("return gameWon",gameWon)
+	return gameWon;
+}
+function gameOver(gameWon) {
+	for (let index of winCombos[gameWon.index]) {
+		document.getElementById(index).style.backgroundColor =
+			gameWon.player == huPlayer ? "green" : "red";
+	}
+	for (var i = 0; i < cells.length; i++) {
+		cells[i].removeEventListener('click', turnClick, false);
+	}
+}
