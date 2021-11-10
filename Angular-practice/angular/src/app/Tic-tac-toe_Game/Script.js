@@ -1,6 +1,6 @@
 var origBoard;
-const huPlayer = 'O';
-const aiPlayer = 'X';
+const huPlayer = 'X';
+const aiPlayer = 'O';
 const winCombos = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -28,7 +28,10 @@ function startGame() {
 function turnClick(square) {
 	if (typeof origBoard[square.target.id] == 'number') {
 		turn(square.target.id, huPlayer)
-		if (!checkTie()) turn(bestSpot(), aiPlayer);
+		if (!checkTie()) {
+            turn(bestSpot(), aiPlayer);
+        }
+
 	}
 }
 
@@ -51,16 +54,15 @@ function checkWin(board, player) {
 	}
 	return gameWon;
 }
-
 function gameOver(gameWon) {
 	for (let index of winCombos[gameWon.index]) {
 		document.getElementById(index).style.backgroundColor =
-			gameWon.player == huPlayer ? "blue" : "red";
+			gameWon.player == huPlayer ? "green" : "red";
 	}
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
-	declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose.");
+	declareWinner(gameWon.player == huPlayer ? "Player X winner!" : "Player Ai looser.");
 }
 
 function declareWinner(who) {
@@ -69,17 +71,19 @@ function declareWinner(who) {
 }
 
 function emptySquares() {
-	return origBoard.filter(s => typeof s == 'number');
+    console.log("EmptySquares",origBoard);
+	return origBoard.filter(square => typeof square == 'number');
 }
 
 function bestSpot() {
+    console.log("emptySquares()",emptySquares)
 	return emptySquares()[0];
 }
 
 function checkTie() {
 	if (emptySquares().length == 0) {
 		for (var i = 0; i < cells.length; i++) {
-			cells[i].style.backgroundColor = "green";
+			cells[i].style.backgroundColor = "cyan";
 			cells[i].removeEventListener('click', turnClick, false);
 		}
 		declareWinner("Tie Game!")
