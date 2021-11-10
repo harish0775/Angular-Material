@@ -17,6 +17,7 @@ import { FormbuilderComponent } from './formbuilder/formbuilder.component';
 import { FormcontrolComponent } from './formcontrol/formcontrol.component';
 import { TempletedrivenfromComponent } from './templetedrivenfrom/templetedrivenfrom.component';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     FormcontrolComponent,
     TempletedrivenfromComponent,
     ReactiveformComponent
+   
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,8 @@ import { ReactiveformComponent } from './reactiveform/reactiveform.component';
     MatInputModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatListModule
   ],exports: [
     CommonModule,
     FormsModule,

@@ -1,21 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+<div class="main">
+  <h1>My To Do List</h1>
+  <ul>
+    <li *ngFor="let item of items">{{item.description}}</li>
+  </ul>
+</div>
+<label for="addItemInput">What would you like to do today?</label>
+
+<input
+  #newItem
+  placeholder="add an item"
+  (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+  class="lg-text-input"
+  id="addItemInput"
+/>
 
 
-@Component({
-  selector: 'app-component4',
-  templateUrl: './component4.component.html',
-  styleUrls: ['./component4.component.css']
-})
-export class Component4Component implements OnInit {
-  
-  addtask(data:any){
-    console.warn(data);
-  }
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-  addItem(description: string) {
+ addItem(description: string) {
   this.allItems.unshift({
     description,
     done: false
@@ -39,5 +39,3 @@ title = 'todo';
     }
     return this.allItems.filter(item => this.filter === 'done' ? item.done : !item.done);
   }
-
-}

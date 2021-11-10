@@ -1,1 +1,45 @@
 <p>component4 works!</p>
+
+<div class="todo-container">
+  <h2>ToDo List App</h2>
+  <!-- <form class = "form-example" #todo = "ngForm" (onSubmit) = "addtask(todo.value)">
+         <mat-label>Add Task</mat-label>
+   <input matInput type = "text" placeholder="Complete macroTask" #name ="name" #name = "ngModel"[ngModel]>
+   <button  mat-button color="accent" appearance = "fill">+</button>
+   </form> -->
+
+  <!-- <form #todo="ngForm" (ngSubmit)="addtask(todo.value)">
+    <mat-form-field>
+      <mat-label>Add Task</mat-label>
+      <input  matInput type="text" required #name="ngModel" name="name" [ngModel]/>
+    </mat-form-field>
+    <button mat-button color="accent">Add</button>
+  </form> -->
+  <!-- <mat-list role="list" color="accent" appearance="fill">
+    <mat-list-item role="listitem" *ngFor="let item of items" >Item 1</mat-list-item>
+    <mat-list-item role="listitem">Item 2</mat-list-item>
+    <mat-list-item role="listitem">Item 3</mat-list-item>
+  </mat-list> -->
+</div>
+<div class="main">
+  <h1>My To Do List</h1>
+<mat-form-field>
+    
+    <mat-label >Add Task</mat-label>
+    <input 
+  matInput
+  #newItem
+  required
+  color="accent"
+  placeholder="add an item"
+  (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+  id="addItemInput"
+/>
+</mat-form-field><button  mat-stroked-button (click)="addItem(newItem.value)">Add</button>
+<mat-list role="list" color="accent" appearance="fill">
+    <mat-list-item role="listitem" *ngFor="let item of items" >{{item.description}}</mat-list-item>
+  </mat-list>
+  <!-- <ul>
+    <li *ngFor="let item of items">{{item.description}}</li>
+  </ul> -->
+</div>
