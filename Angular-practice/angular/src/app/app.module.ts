@@ -10,9 +10,13 @@ import { Component4Component } from './component4/component4.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
+import { ReactiveFormsModule} from '@angular/forms'
+import { CommonModule } from '@angular/common';
 import { FormbuilderComponent } from './formbuilder/formbuilder.component';
 import { FormcontrolComponent } from './formcontrol/formcontrol.component';
+import { TempletedrivenfromComponent } from './templetedrivenfrom/templetedrivenfrom.component';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 
 @NgModule({
@@ -23,16 +27,24 @@ import { FormcontrolComponent } from './formcontrol/formcontrol.component';
     Component3Component,
     Component4Component,
     FormbuilderComponent,
-    FormcontrolComponent
+    FormcontrolComponent,
+    TempletedrivenfromComponent,
+    ReactiveformComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
+  ],exports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

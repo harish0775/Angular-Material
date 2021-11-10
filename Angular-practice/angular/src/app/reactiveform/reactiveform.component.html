@@ -1,0 +1,11 @@
+<p>reactiveform works!</p>
+<form [formGroup] = "login" (ngSubmit) = "onSubmit()">
+        <mat-label>Name</mat-label>
+        <input type = "text"   formControlName="name"required name = "name">
+        <label>Password</label>
+        <input type = "password" required  formControlName="password" name = "password">
+        <button> Login</button>
+        <!-- <h3 *ngIf = "name.invalid&&name.touched"> Name Error</h3>
+        <h3 *ngIf = "password.invalid && password.touched"> password Error</h3> -->
+    
+</form>

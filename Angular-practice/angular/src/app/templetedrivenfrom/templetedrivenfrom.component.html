@@ -1,0 +1,11 @@
+<p>templetedrivenfrom works!</p>
+<form #login = "ngForm" (ngSubmit) = "user(login.value)">
+        <mat-label>Name</mat-label>
+        <input type = "text" required #name = "ngModel" pattern=[] name = "name" [ngModel]>
+        <input type = "password" required  #password = "ngModel"pattern= [] name = "password" [ngModel]>
+        <button> Login</button>
+        <h3 *ngIf = "name.invalid&&name.touched"> Name Error</h3>
+        <h3 *ngIf = "password.invalid && password.touched"> password Error</h3>
+
+</form>
+<span *ngIf = "login.invalid && login.touched ">form Is Invalid</span>
